@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Video Transcoder</title>
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self';">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Video Transcoder</h1>
+            <button id="themeToggle">Toggle Theme</button>
+        </header>
+
+        <div class="main-content">
+            <div class="settings-panel">
+                <h2>Settings</h2>
+                <div class="setting-group">
+                    <button id="selectVideos">Select Videos</button>
+                </div>
+
+                <div class="setting-group">
+                    <label for="resolution">Output Resolution:</label>
+                    <select id="resolution">
+                        <option value="original">Original</option>
+                        <option value="1920x1080">1920x1080 (1080p)</option>
+                        <option value="1280x720">1280x720 (720p)</option>
+                        <option value="640x480">640x480 (480p)</option>
+                    </select>
+                </div>
+
+                <div class="setting-group">
+                    <label for="videoCodec">Video Codec:</label>
+                    <select id="videoCodec">
+                        <option value="libx264">H.264 (libx264)</option>
+                        <option value="libx265">H.265 (libx265)</option>
+                    </select>
+                </div>
+
+                <div class="setting-group">
+                    <label for="outputFormat">Output Format:</label>
+                    <select id="outputFormat">
+                        <option value="mp4">MP4</option>
+                        <option value="mkv">MKV</option>
+                        <option value="mov">MOV</option>
+                    </select>
+                </div>
+
+                 <div class="setting-group">
+                     <label for="videoQuality">Video Quality:</label>
+                     <select id="videoQuality">
+                         <option value="23">High</option>
+                         <option value="28">Medium</option>
+                         <option value="33">Low</option>
+                     </select>
+                 </div>
+
+                 <div class="setting-group">
+                     <label for="videoBitrate">Video Bitrate:</label>
+                     <select id="videoBitrate">
+                         <option value="auto" selected>Auto (CRF)</option>
+                         <option value="5000k">5000 kbps (High)</option>
+                         <option value="2500k">2500 kbps (Medium)</option>
+                         <option value="1000k">1000 kbps (Low)</option>
+                     </select>
+                 </div>
+
+                 
+
+                
+
+                
+
+                <div class="setting-group">
+                    <label for="audioBitrate">Audio Bitrate:</label>
+                    <select id="audioBitrate">
+                        <option value="192k">192 kbps</option>
+                        <option value="128k">128 kbps</option>
+                        <option value="96k">96 kbps</option>
+                    </select>
+                </div>
+
+                <div class="setting-group">
+                    <label for="volume">Volume Adjustment (dB):</label>
+                    <input type="range" id="volume" min="-60" max="60" value="0" step="1">
+                    <output for="volume" id="volumeValue">0 dB</output>
+                </div>
+
+                <h2>Output Settings</h2>
+                <div class="setting-group checkbox-group">
+                    <input type="checkbox" id="sameDirectoryAsInput" checked>
+                    <label for="sameDirectoryAsInput">Save in same directory as input</label>
+                </div>
+
+                <div class="setting-group input-group">
+                    <input type="text" id="outputDirectory" placeholder="Select output directory" disabled>
+                    <button id="browseOutputDirectory">Browse</button>
+                </div>
+
+                <div class="setting-group">
+                    <button id="startConversion">Start Conversion</button>
+                </div>
+            </div>
+
+            <div class="file-progress-panel">
+                <h2>Selected Files</h2>
+                <ul id="selectedFilesList"></ul>
+                <hr class="section-divider">
+                <h2>Progress</h2>
+                <div id="progress"></div>
+            </div>
+        </div>
+    </div>
+    <script src="renderer.js"></script>
+</body>
+</html>

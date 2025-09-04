@@ -1,0 +1,243 @@
+:root {
+    --background-color: #ffffff;
+    --text-color: #333333;
+    --primary-color: #007bff;
+    --secondary-color: #6c757d;
+    --border-color: #cccccc;
+    --input-background: #f8f9fa;
+    --input-border: #ced4da;
+    --button-text-color: #ffffff;
+    --progress-bar-background: #e9ecef;
+    --progress-bar-fill: #007bff;
+}
+
+.dark-theme {
+    --background-color: #2c2c2c;
+    --text-color: #f8f9fa;
+    --primary-color: #66b3ff;
+    --secondary-color: #adb5bd;
+    --border-color: #555555;
+    --input-background: #3a3a3a;
+    --input-border: #555555;
+    --button-text-color: #ffffff;
+    --progress-bar-background: #495057;
+    --progress-bar-fill: #66b3ff;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    margin: 0;
+    padding: 20px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: var(--background-color);
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 10px;
+}
+
+h1 {
+    color: var(--primary-color);
+    margin: 0;
+}
+
+h2 {
+    color: var(--primary-color);
+    margin-top: 20px;
+    margin-bottom: 15px;
+}
+
+.main-content {
+    display: flex;
+    gap: 20px;
+}
+
+.settings-panel,
+.file-progress-panel {
+    flex: 1;
+    padding: 15px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+}
+
+.setting-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input[type="text"],
+select,
+input[type="range"] {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid var(--input-border);
+    border-radius: 4px;
+    background-color: var(--input-background);
+    color: var(--text-color);
+    box-sizing: border-box;
+}
+
+input[type="range"] {
+    -webkit-appearance: none;
+    height: 8px;
+    background: var(--progress-bar-background);
+    outline: none;
+    opacity: 0.7;
+    transition: opacity 0.2s;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: var(--primary-color);
+    cursor: pointer;
+}
+
+input[type="range"]::-moz-range-thumb {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: var(--primary-color);
+    cursor: pointer;
+}
+
+output {
+    display: block;
+    margin-top: 5px;
+    text-align: right;
+}
+
+button {
+    background-color: var(--primary-color);
+    color: var(--button-text-color);
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.2s;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+button:disabled {
+    background-color: var(--secondary-color);
+    cursor: not-allowed;
+}
+
+.input-group {
+    display: flex;
+}
+
+.input-group input {
+    flex-grow: 1;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.input-group button {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+.checkbox-group {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.checkbox-group input[type="checkbox"] {
+    width: auto;
+    margin-right: 10px;
+}
+
+.list-group {
+    list-style: none;
+    padding: 0;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+.list-group-item {
+    padding: 10px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.list-group-item:last-child {
+    border-bottom: none;
+}
+
+.progress-item {
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+}
+
+.progress-bar-container {
+    background-color: var(--progress-bar-background);
+    border-radius: 4px;
+    overflow: hidden;
+    margin: 5px 0;
+}
+
+.progress-bar {
+    height: 20px;
+    background-color: var(--progress-bar-fill);
+    width: 0%;
+    text-align: center;
+    color: var(--button-text-color);
+    line-height: 20px;
+    transition: width 0.3s;
+}
+
+.progress-message {
+    font-size: 0.9em;
+    color: var(--text-color);
+    margin-top: 5px;
+}
+
+.cancel-btn {
+    background-color: #dc3545;
+    margin-top: 5px;
+    padding: 5px 10px;
+    font-size: 14px;
+}
+
+.cancel-btn:hover {
+    background-color: #c82333;
+}
+
+.section-divider {
+    border: 0;
+    height: 1px;
+    background-color: var(--border-color);
+    margin: 20px 0;
+}
