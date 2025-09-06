@@ -1,6 +1,6 @@
 {
   "name": "batch-video-transcoder",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "",
   "main": "main.js",
   "scripts": {
@@ -14,9 +14,11 @@
   "license": "ISC",
   "build": {
     "appId": "com.example.batch-video-transcoder",
+    "productName": "Video Transcoder",
     "files": [
       "**/*"
     ],
+    "artifactName": "${productName}-v${version}-${arch}.${ext}",
     "mac": {
       "target": "dmg"
     },
