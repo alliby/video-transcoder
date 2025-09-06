@@ -19,6 +19,12 @@
       "**/*"
     ],
     "artifactName": "${productName}-v${version}-${arch}.${ext}",
+    "publish": [
+      {
+        "provider": "github",
+        "releaseType": "release"
+      }
+    ],
     "mac": {
       "target": "dmg"
     },
